@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+:root {
+    --bg: #202020;
+    --branco: #ffffff;
+    --verde: #2e7d32;
+    --preto: #000000;
+}
+
+body {
+    background-color: var(--bg);
+    width: 100%;
+    padding-bottom: 50px;
+    header {
+        text-align: center;
+        height: 150px;
+        margin-top: 20px;
+        img {
+            height: 100%;
+        }
+    }
+
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        .pontos {
+            padding: 0 2%;
+            .container {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 60px;
+                margin-top: 40px;
+                .ponto-turistico {
+                    width: 300px;
+                    border-radius: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    gap: 20px;
+                    cursor: pointer;
+                    
+                    img {
+                        width: 100%;
+                        height: 230px;
+                        border-radius: 20px;
+                        border: 3px solid var(--verde);
+                        box-shadow: 0px 6px 12px 0px var(--branco);
+
+                    }
+
+                    span {
+                        font-size: 20px;
+                        color: var(--branco);
+                        font-weight: 500;
+                        text-shadow: 0px 0px 10px var(--branco);
+                    }
+                }
+            }
+        }
+
+        .pontos-exp {
+            padding: 0 2%;
+            width: calc(100% - 150px);
+            position: absolute;
+            top: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: none;
+            .container {
+                background-color: var(--preto);
+                width: 100%;
+                padding: 15px 50px;
+                border-radius: 20px;
+                position: relative;
+
+                .fechar {
+                    background-color: var(--branco);
+                    width: 50px;
+                    height: 50px;
+                    position: absolute;
+                    right: 20px;
+                    top: 20px;
+                    border-radius: 50%;
+                    z-index: 1;
+
+                    cursor: pointer;
+
+
+                    &::after, &::before{
+                        content: "";
+                        width: 30px;
+                        height: 2px;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%) rotate(45deg);
+                        z-index: 3;
+                        background-color: var(--preto);
+                    }
+
+                    &::before {
+                        transform: translate(-50%,-50%) rotate(-45deg)
+                    }
+                }
+
+                .ponto-turistico-exp {
+                    display: none;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                    color: var(--branco);
+
+
+                    
+
+
+                    span {
+                        font-size: 32px;
+                        margin: 40px 0;
+                    }
+
+                    img {
+                        border-radius: 20px;
+                        width: 100%;
+                        margin-bottom: 60px;
+                    }
+
+                    .content {
+
+                        max-width: 800px;
+
+                        p {
+                            font-size: 20px;
+                            margin: 20px 0;
+                            text-align: justify;
+                            color: var(--branco);
+                        }
+
+                        .endereco {
+                            text-align: center;
+                        }
+                    }
+                }
+
+                .hardim-botanico{
+                    display: none;
+                }
+            }
+        }
+    }
+}
